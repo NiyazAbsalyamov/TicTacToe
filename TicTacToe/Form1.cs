@@ -7,21 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TicTacToe.Models;
 
 namespace TicTacToe
 {
     public partial class Form1 : Form
     {
-        private string Side
-        {
-            get { return _isX ? "X" : "O"; }
-        }
+        private string Side => _isX ? "X" : "O";
 
         private bool _isX;
+
+        private Model _model;
+
         public Form1()
         {
             InitializeComponent();
             _isX = MessageBox.Show(@"Playing for X?", @"Playing for X?", MessageBoxButtons.YesNo) == DialogResult.Yes;
+            _model = new Model();
         }
 
         private void Key1_Click(object sender, EventArgs e)
