@@ -8,15 +8,25 @@ namespace TicTacToe
     {
         private string Side => _isX ? "X" : "O";
 
+        private string AiSide => !_isX ? "X" : "O";
+
         private bool _isX;
 
         private readonly Model _model;
+
+        private AI _ai;
 
         public Form1()
         {
             InitializeComponent();
             _isX = MessageBox.Show(@"Playing for X?", @"Playing for X?", MessageBoxButtons.YesNo) == DialogResult.Yes;
             _model = new Model();
+            _ai = new AI();
+            if (!_isX)
+            {
+                var k = _ai.AiStep(_model, _isX);
+
+            }
         }
 
         private void Key1_Click(object sender, EventArgs e)
@@ -82,6 +92,60 @@ namespace TicTacToe
             }
             _model.Reset();
             _isX = MessageBox.Show(@"Playing for X?", @"Playing for X?", MessageBoxButtons.YesNo) == DialogResult.Yes;
+        }
+
+        private void AIStep(int key)
+        {
+            switch (key)
+            {
+                case 1:
+                    {
+                        Key1.Text = AiSide;
+                        break;
+                    }
+                case 2:
+                    {
+                        Key2.Text = AiSide;
+                        break;
+                    }
+                case 3:
+                    {
+                        Key3.Text = AiSide;
+                        break;
+                    }
+                case 4:
+                    {
+                        Key4.Text = AiSide;
+                        break;
+                    }
+                case 5:
+                    {
+                        Key5.Text = AiSide;
+                        break;
+                    }
+                case 6:
+                    {
+                        Key6.Text = AiSide;
+                        break;
+                    }
+                case 7:
+                    {
+                        Key7.Text = AiSide;
+                        break;
+                    }
+                case 8:
+                    {
+                        Key8.Text = AiSide;
+                        break;
+                    }
+                case 9:
+                    {
+                        Key9.Text = AiSide;
+                        break;
+                    }
+            }
+
+            _model.Set(key, false, !_isX, false);
         }
     }
 }

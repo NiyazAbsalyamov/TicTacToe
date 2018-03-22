@@ -4,11 +4,15 @@
     {
         private bool _isPlayer;
         private bool _isX;
-        public bool isEmpty = true;
-        
+        private bool _isEmpty = true;
+
+        public bool IsPlayer => _isPlayer;
+        public bool IsX => _isX;
+        public bool IsEmpty => _isEmpty;
+
         public Cell()
         {
-            isEmpty = false;
+            _isEmpty = false;
         }
         public Cell(bool isPlayer, bool isX)
         {
@@ -19,14 +23,14 @@
         {
             _isPlayer = false;
             _isX = false;
-            isEmpty = false;
+            _isEmpty = false;
         }
 
         public void Set(bool isPlayer, bool isX)
         {
             _isPlayer = isPlayer;
             _isX = isX;
-            isEmpty = false;
+            _isEmpty = false;
         }
     }
 }

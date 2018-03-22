@@ -34,5 +34,10 @@ namespace TicTacToe.Models
                 cell.Value.Reset();
             }
         }
+
+        public Cell Get(int cell)
+        {
+            return _field[cell];
+        }
     }
 }
