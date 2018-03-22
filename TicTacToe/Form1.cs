@@ -24,8 +24,7 @@ namespace TicTacToe
             _ai = new AI();
             if (!_isX)
             {
-                var k = _ai.AiStep(_model, _isX);
-
+                AIStep(_ai.AiStep(_model));
             }
         }
 
@@ -33,54 +32,63 @@ namespace TicTacToe
         {
             Key1.Text = Side;
             _model.Set(1, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key2_Click(object sender, EventArgs e)
         {
             Key2.Text = Side;
             _model.Set(2, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key3_Click(object sender, EventArgs e)
         {
             Key3.Text = Side;
             _model.Set(3, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key4_Click(object sender, EventArgs e)
         {
             Key4.Text = Side;
             _model.Set(4, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key5_Click(object sender, EventArgs e)
         {
             Key5.Text = Side;
             _model.Set(5, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key6_Click(object sender, EventArgs e)
         {
             Key6.Text = Side;
             _model.Set(6, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key7_Click(object sender, EventArgs e)
         {
             Key7.Text = Side;
             _model.Set(7, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key8_Click(object sender, EventArgs e)
         {
             Key8.Text = Side;
             _model.Set(8, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void Key9_Click(object sender, EventArgs e)
         {
             Key9.Text = Side;
             _model.Set(9, true, _isX, false);
+            AIStep(_ai.AiStep(_model));
         }
 
         private void newGameButton_Click(object sender, EventArgs e)

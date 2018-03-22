@@ -12,7 +12,7 @@
 
         public Cell()
         {
-            _isEmpty = false;
+            _isEmpty = true;
         }
         public Cell(bool isPlayer, bool isX)
         {

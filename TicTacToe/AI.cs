@@ -8,7 +8,7 @@ namespace TicTacToe
 {
     public class AI
     {
-        public int AiStep(Model model, bool isPlayerX)
+        public int AiStep(Model model)
         {
             var fieldX = new bool[3, 3];
             var fieldO = new bool[3, 3];
@@ -16,17 +16,17 @@ namespace TicTacToe
 
             for (var i = 1; i < 10; i++)
             {
-                fieldX[(i - 1) / 3, i % 3 - 1] = model.Get(i).IsX && !model.Get(i).IsEmpty;
+                fieldX[(i - 1) / 3, i % 3] = model.Get(i).IsX && !model.Get(i).IsEmpty;
             }
 
             for (var i = 1; i < 10; i++)
             {
-                fieldO[(i - 1) / 3, i % 3 - 1] = !model.Get(i).IsX && !model.Get(i).IsEmpty;
+                fieldO[(i - 1) / 3, i % 3] = !model.Get(i).IsX && !model.Get(i).IsEmpty;
             }
 
             for (var i = 1; i < 10; i++)
             {
-                fieldEmpty[(i - 1) / 3, i % 3 - 1] = model.Get(i).IsEmpty;
+                fieldEmpty[(i - 1) / 3, i % 3] = model.Get(i).IsEmpty;
             }
 
             for (var i = 1; i < 9; i++)
